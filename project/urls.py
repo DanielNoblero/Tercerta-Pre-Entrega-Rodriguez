@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppRodriguez.views import index
+from AppRodriguez.views import index, Venta_minorista, Venta_mayorista, stock
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index), # ESTA ES LA NUEVA FUNCTION
+    path('', index, name="index"), # ESTA ES LA NUEVA FUNCTION
+    path("Ventas Minorista", Venta_minorista, name = "Venta minorista"),
+    path("Ventas Mayorista", Venta_mayorista, name = "Venta mayorista"),
+    path("stock", stock, name = "stock"),
 ]
