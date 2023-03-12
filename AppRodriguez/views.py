@@ -11,3 +11,6 @@ def Venta_mayorista(request):
 
 def stock(request):
     return render (request, "ApprodRiguez/stock.html")
+
+def buscar(request):
+    return render (request, "ApprodRiguez/buscar.html")
