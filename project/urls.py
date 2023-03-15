@@ -15,14 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AppRodriguez.views import index, Venta_minorista, Venta_mayorista, stock, buscar
+from AppRodriguez.views import index, Venta_minorista, Venta_mayorista, Stock_form, buscar_minorista, agregar_minorista, agregar_mayorista, agregar_stock, buscar_mayorista, buscar_stock
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name="index"), # ESTA ES LA NUEVA FUNCTION
-    path("Ventas Minorista", Venta_minorista, name = "Venta minorista"),
-    path("Ventas Mayorista", Venta_mayorista, name = "Venta mayorista"),
-    path("stock", stock, name = "stock"),
-    path("buscar", buscar, name = "buscar"),
-
+    path('', index, name="index"), 
+    path("Venta_minorista/", Venta_minorista, name = "Venta_minorista"),
+    path("Venta_minorista/agregar", agregar_minorista, name = "agregar_minorista"),
+    path("Venta_mayorista/", Venta_mayorista, name = "Venta_mayorista"),
+    path("Venta_mayorista/agregar", agregar_mayorista, name = "agregar_mayorista"),
+    path("stock/", Stock_form, name = "stock"),
+    path("stock/agregar", agregar_stock, name = "agregar_stock"),
+    path("buscar/", buscar_minorista, name = "buscar_minorista"),
+    path("buscar/", buscar_stock, name = "buscar_stock"),
+    path("buscar/", buscar_mayorista, name = "buscar_mayorista"),
+    
 ]

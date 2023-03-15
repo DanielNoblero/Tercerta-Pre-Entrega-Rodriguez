@@ -1,3 +1,6 @@
 from django.contrib import admin
+from AppRodriguez.models import Mayorista, Minorista, Stock
 
-# Register your models here.
+admin.site.register(Mayorista)
+admin.site.register(Minorista)
+admin.site.register(Stock)

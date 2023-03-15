@@ -8,6 +8,31 @@
         <p class="lead"></p>
         <p class="lead">
         </p>
+    </main>
+          
+            <h1>Resultado de busqueda<h1>
+            <ul>
+            {% if minorista %}
+            {% for Minorista in minorista %} 
+            <li> {{Minorista.Nombre}} - {{Minorista.Telefono}} - {{Minorista.Direccion}}</li>
+            {% endfor %}
+
+            
+            {% elif Mayorista %}
+            {% for Mayorista in mayorista %} 
+            <li> {{Mayorista.NombreEmpresa}} - {{Mayorista.Telefono}} - {{Mayorista.Direccion}}</li>
+            {% endfor %}
+
+            {% elif Stock %}
+            {% for Stock in stock %} 
+            <li> {{Stock.Articulo}} - {{Stock.Cantidad}} - {{Stock.Precio}}</li>
+            {% endfor %}
+
+            {% endif %}
+
+          </ul>
+
+
       </main>
 
 {% endblock %}

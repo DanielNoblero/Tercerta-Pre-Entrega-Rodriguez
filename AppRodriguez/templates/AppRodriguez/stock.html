@@ -1,13 +1,32 @@
 {% extends "AppRodriguez/base.html" %}
+
 {% load static %}
 
 {% block principal %}
   <main role="main" class="inner cover">
+
+    <center><h1 class="cover-heading">Stock</h1></center>
+    <form action="{% url 'buscar_stock'%}"class="d-flex">
+      <input class="text-center" name="criterio" type="search" placeholder="Buscar en stock" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Buscar</button>
+    </form></center>
         <center><img src="{% static 'AppRodriguez/assets/imagenes/paisaje2.jpg' %}" alt="centered image" height="500" width="900"> </center>
-        <h1 class="cover-heading"></h1>
-        <p class="lead"></p>
-        <p class="lead">
-        </p>
+        <br>
       </main>
 
+      <ul class="text-left">
+        {% if form %}
+        <form action="{%url 'agregar_stock'%}"  method="post">
+          {% csrf_token %} 
+          {{form.as_p}}
+          <input type="submit" value="Agregar">
+        </form>
+      </ul>
+        {% endif %}
+        <ul>
+            {% for Stock in stock %} 
+            <li> {{Stock.Articulo}} - {{Stock.Cantidad}} - {{Stock.Precio}}</li>
+            {% endfor %}
+      </ul>
+                  
 {% endblock %}
