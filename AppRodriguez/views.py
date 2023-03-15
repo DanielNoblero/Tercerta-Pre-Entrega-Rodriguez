@@ -50,7 +50,7 @@ def Stock_form(request):
     return render(request, "AppRodriguez/stock.html", context)
 
 def stock(request):
-    return render(request, "AppAscenzi/pedidos.html" )
+    return render(request, "AppRodriguez/pedidos.html" )
 
 def agregar_stock(request):
     stock_form = StockForm(request.POST)
